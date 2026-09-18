@@ -31,47 +31,52 @@ This project demonstrates the integration of:
 
 ## 🏗️ System Architecture
 
+## 🏗️ System Architecture
+
 ```text
-                 ┌──────────────────────┐
-                 │      AI Client       │
-                 │  / MCP Compatible    │
-                 │       Agent          │
-                 └──────────┬───────────┘
-                            │
-                            │ MCP Request
-                            ▼
-                 ┌──────────────────────┐
-                 │    MCP Server       │
-                 │  URL Fetcher Tool   │
-                 └──────────┬───────────┘
-                            │
-                            │ HTTP Request
-                            ▼
-                 ┌──────────────────────┐
-                 │     Target URL       │
-                 │    / Web Resource    │
-                 └──────────┬───────────┘
-                            │
-                            │ Response
-                            ▼
-                 ┌──────────────────────┐
-                 │    MCP Server       │
-                 │  Processes Content  │
-                 └──────────┬───────────┘
-                            │
-                            │ MCP Response
-                            ▼
-                 ┌──────────────────────┐
-                 │      AI Client       │
-                 │   Uses Web Content  │
-                 └──────────────────────┘
----
+┌──────────────────────┐
+│      AI Client       │
+│  LLM / AI Application│
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│     MCP Server       │
+│  Tool Interface      │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│   URL Fetcher Tool   │
+│  URL Validation      │
+│  HTTP Request        │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│     Web Resource     │
+│   HTML / Web Content │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│    MCP Response      │
+└──────────┬───────────┘
+           │
+           ▼
+┌──────────────────────┐
+│      AI Client       │
+│   Uses Web Content   │
+└──────────────────────┘
+```
+
 ## 📝 Conclusion
 
 The **MCP URL Fetcher Server** demonstrates how the **Model Context Protocol (MCP)** can connect AI applications and agents with external web resources through a structured tool interface.
 
 By providing URL-fetching functionality as an MCP tool, the project offers a lightweight and reusable foundation for building **web-enabled AI agents** and agentic workflows.
 
-The system can be further enhanced with features such as **SSRF protection, URL validation, content extraction, caching, authentication, rate limiting, and additional MCP tools**, making it suitable for more advanced AI applications.
+The system can be further enhanced with features such as **URL validation, SSRF protection, content extraction, caching, authentication, rate limiting, and additional MCP tools**.
 
+> **MCP URL Fetcher — Connecting AI Agents to the Web. 🔗🤖**
 > **MCP URL Fetcher — Connecting AI Agents to the Web. 🔗🤖**
